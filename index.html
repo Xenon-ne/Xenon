@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link href="css/lightbox.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .image-folder {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .image-folder a {
+            display: block;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        .image-folder img {
+            border-radius: 15px;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+        }
+        .image-folder a:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Gallery</h1>
+    <div class="image-folder">
+        <a href="images/1.jpg" data-lightbox="gallery"><img src="images/1.jpg" alt="Image 1"></a>
+        <a href="images/2.jpg" data-lightbox="gallery"><img src="images/2.jpg" alt="Image 2"></a>
+        <a href="images/3.jpg" data-lightbox="gallery"><img src="images/3.jpg" alt="Image 3"></a>
+        <a href="images/4.jpg" data-lightbox="gallery"><img src="images/4.jpg" alt="Image 4"></a>
+        <a href="images/5.jpg" data-lightbox="gallery"><img src="images/5.jpg" alt="Image 5"></a>
+        <a href="images/6.jpg" data-lightbox="gallery"><img src="images/6.jpg" alt="Image 6"></a>
+        <a href="images/7.jpg" data-lightbox="gallery"><img src="images/7.jpg" alt="Image 7"></a>
+        <a href="images/8.jpg" data-lightbox="gallery"><img src="images/8.jpg" alt="Image 8"></a>
+        <a href="images/9.jpg" data-lightbox="gallery"><img src="images/9.jpg" alt="Image 9"></a>
+        <a href="images/10.jpg" data-lightbox="gallery"><img src="images/10.jpg" alt="Image 10"></a>
+        <a href="images/11.jpg" data-lightbox="gallery"><img src="images/11.jpg" alt="Image 11"></a>
+    </div>
+    <script src="js/lightbox.min.js"></script>
+</body>
+</html>
