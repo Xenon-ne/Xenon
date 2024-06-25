@@ -20,60 +20,88 @@
             justify-content: center;
         }
         .image-folder a {
+            position: relative;
+            display: inline-block;
             border-radius: 15px;
             overflow: hidden;
-            transition: transform 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
         .image-folder img {
-            border-radius: 15px;
+            display: block;
             width: 150px; /* Adjusted width for better viewing */
             height: auto;
             object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s;
         }
-        .image-folder a:hover img {
+        .image-folder a:hover img, .image-folder a:focus img {
             transform: scale(1.1);
         }
-        @media (hover: hover) {
-            .image-folder a:hover img {
-                transform: scale(1.1);
-            }
+        .image-folder a:focus, .image-folder a:target {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: auto;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+        }
+        .image-folder a:focus img, .image-folder a:target img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+        }
+        .image-folder a:focus ~ .image-folder a, .image-folder a:target ~ .image-folder a {
+            visibility: hidden;
         }
     </style>
 </head>
 <body>
     <h1>Image Gallery</h1>
     <div class="image-folder">
-        <a href="images/002 (1).jpg" data-lightbox="gallery"><img src="images/002 (1).jpg" alt="002 (1)"></a>
-        <a href="images/003 (1).jpg" data-lightbox="gallery"><img src="images/003 (1).jpg" alt="003 (1)"></a>
-        <a href="images/003.jpg" data-lightbox="gallery"><img src="images/003.jpg" alt="003"></a>
-        <a href="images/004 (1).jpg" data-lightbox="gallery"><img src="images/004 (1).jpg" alt="004 (1)"></a>
-        <a href="images/1280x1920_005d78c8b560db5e3dd74310437704d0.jpg" data-lightbox="gallery"><img src="1280x1920_005d78c8b560db5e3dd74310437704d0.jpg" alt="1280x1920_005d78c8b560db5e3dd7431043770...."></a>
-        <a href="images/1280x1920_df56a8435b88995c2a05e6c71d37f8b0.jpg" data-lightbox="gallery"><img src="1280x1920_df56a8435b88995c2a05e6c71d37f8b0.jpg" alt="1280x1920_df56a8435b88995c2a05e6c71d3f8...."></a>
-        <a href="images/1333x2000_97becd0184ee2c107368220d798cfc1d.jpg" data-lightbox="gallery"><img src="1333x2000_97becd0184ee2c107368220d798cfc1d.jpg" alt="1333x2000_97becd0184ee2c107368220d798c...."></a>
-        <a href="images/1333x2000_b65ffcf1cfb6608c066f5967adc302a.jpg" data-lightbox="gallery"><img src="images/1333x2000_b65ffcf1cfb6608c066f5967adcb302a.jpg" alt="1333x2000_b65ffcf1cfb6608c066f5967adc302...."></a>
-        <a href="images/1412x2000_6d2250658ad3a6c097a1e04821196d93ae.jpg" data-lightbox="gallery"><img src="images/1412x2000_6d2250658ad3a6c097a1e04821196d93ae.jpg" alt="1412x2000_6d2250658ad3a6c097a1e04821196d...."></a>
-        <a href="images/1452x1920_a1deed87faec6a284ab8861943e76891.jpg" data-lightbox="gallery"><img src="images/1452x1920_a1deed87faec6a284ab8861943e76891.jpg" alt="1452x1920_a1deed87faec6a284ab8861943e768...."></a>
-        <a href="images/1E5E238A-A203-4F0F-A872-F27D9B20BEC2.jpg" data-lightbox="gallery"><img src="images/1E5E238A-A203-4F0F-A872-F27D9B20BEC2.jpg" alt="1E5E238A-A203-4F0F-A872-F27D9B20BEC2"></a>
-        <a href="images/20231202_000850.png" data-lightbox="gallery"><img src="images/20231202_000850.png" alt="20231202_000850"></a>
-        <a href="images/20240107_104030.jpg" data-lightbox="gallery"><img src="images/20240107_104030.jpg" alt="20240107_104030"></a>
-        <a href="images/20240107_104735.jpg" data-lightbox="gallery"><img src="images/20240107_104735.jpg" alt="20240107_104735"></a>
-        <a href="images/20240107_111142.jpg" data-lightbox="gallery"><img src="images/20240107_111142.jpg" alt="20240107_111142"></a>
-        <a href="images/21.jpg" data-lightbox="gallery"><img src="images/21.jpg" alt="21"></a>
-        <a href="images/23Makima.jpg" data-lightbox="gallery"><img src="images/23Makima.jpg" alt="23Makima"></a>
-        <a href="images/24A2.jpg" data-lightbox="gallery"><img src="images/24A2.jpg" alt="24A2"></a>
-        <a href="images/3160x4780_20210817153808142.jpg" data-lightbox="gallery"><img src="images/3160x4780_20210817153808142.jpg" alt="3160x4780_20210817153808142"></a>
-        <a href="images/3788x5748_20210817154155658.jpg" data-lightbox="gallery"><img src="images/3788x5748_20210817154155658.jpg" alt="3788x5748_20210817154155658"></a>
-        <a href="images/4829B406-C554-49AD-ACB0-9912B5F0E2C4.png" data-lightbox="gallery"><img src="images/4829B406-C554-49AD-ACB0-9912B5F0E2C4.png" alt="4829B406-C554-49AD-ACB0-9912B5F0E2C4"></a>
-        <a href="images/816CA127-34B0-406C-91B2-ABCEDC7761AB.png" data-lightbox="gallery"><img src="images/816CA127-34B0-406C-91B2-ABCEDC7761AB.png" alt="816CA127-34B0-406C-91B2-ABCEDC7761AB"></a>
-        <a href="images/IMG_0384.jpg" data-lightbox="gallery"><img src="images/IMG_0384.jpg" alt="IMG_0384"></a>
-        <a href="images/IMG_2025.JPG" data-lightbox="gallery"><img src="images/IMG_2025.JPG" alt="IMG_2025"></a>
-        <a href="images/IMG_6420.JPG" data-lightbox="gallery"><img src="images/IMG_6420.JPG" alt="IMG_6420"></a>
-        <a href="images/IMG_6421.JPG" data-lightbox="gallery"><img src="images/IMG_6421.JPG" alt="IMG_6421"></a>
-        <a href="images/IMG_6422.JPG" data-lightbox="gallery"><img src="images/IMG_6422.JPG" alt="IMG_6422"></a>
-        <a href="images/IMG_6436.JPG" data-lightbox="gallery"><img src="images/IMG_6436.JPG" alt="IMG_6436"></a>
-        <a href="images/Lucyna Kushinada Xenon (36).jpg" data-lightbox="gallery"><img src="images/Lucyna Kushinada Xenon (36).jpg" alt="Lucyna KushinadaXenon (36)"></a>
-        <a href="images/S_Konan (11)-tpWhxJFw.jpg" data-lightbox="gallery"><img src="images/S_Konan (11)-tpWhxJFw.jpg" alt="S_Konan (11)-tpWhxJFw"></a>
+        <a id="image1" href="#image1"><img src="images/002 (1).jpg" alt="002 (1)"></a>
+        <a id="image2" href="#image2"><img src="images/003 (1).jpg" alt="003 (1)"></a>
+        <a id="image3" href="#image3"><img src="images/003.jpg" alt="003"></a>
+        <a id="image4" href="#image4"><img src="images/004 (1).jpg" alt="004 (1)"></a>
+        <a id="image5" href="#image5"><img src="images/1280x1920_005d78c8b560db5e3dd74310437704d0.jpg" alt="1280x1920_005d78c8b560db5e3dd74310437704d0"></a>
+        <a id="image6" href="#image6"><img src="images/1280x1920_df56a8435b88995c2a05e6c71d3f8b0.jpg" alt="1280x1920_df56a8435b88995c2a05e6c71d3f8b0"></a>
+        <a id="image7" href="#image7"><img src="images/1333x2000_97becd0184ee2c107368220d798cfc1d.jpg" alt="1333x2000_97becd0184ee2c107368220d798cfc1d"></a>
+        <a id="image8" href="#image8"><img src="images/1333x2000_b65ffcf1cfb6608c066f5967adc302a.jpg" alt="1333x2000_b65ffcf1cfb6608c066f5967adc302a"></a>
+        <a id="image9" href="#image9"><img src="images/1412x2000_6d2250658ad3a6c097a1e04821196d93ae.jpg" alt="1412x2000_6d2250658ad3a6c097a1e04821196d93ae"></a>
+        <a id="image10" href="#image10"><img src="images/1452x1920_a1deed87faec6a284ab8861943e76891.jpg" alt="1452x1920_a1deed87faec6a284ab8861943e76891"></a>
+        <a id="image11" href="#image11"><img src="images/1E5E238A-A203-4F0F-A872-F27D9B20BEC2.jpg" alt="1E5E238A-A203-4F0F-A872-F27D9B20BEC2"></a>
+        <a id="image12" href="#image12"><img src="images/20231202_000850.png" alt="20231202_000850"></a>
+        <a id="image13" href="#image13"><img src="images/20240107_104030.jpg" alt="20240107_104030"></a>
+        <a id="image14" href="#image14"><img src="images/20240107_104735.jpg" alt="20240107_104735"></a>
+        <a id="image15" href="#image15"><img src="images/20240107_111142.jpg" alt="20240107_111142"></a>
+        <a id="image16" href="#image16"><img src="images/21.jpg" alt="21"></a>
+        <a id="image17" href="#image17"><img src="images/23Makima.jpg" alt="23Makima"></a>
+        <a id="image18" href="#image18"><img src="images/24A2.jpg" alt="24A2"></a>
+        <a id="image19" href="#image19"><img src="images/3160x4780_20210817153808142.jpg" alt="3160x4780_20210817153808142"></a>
+        <a id="image20" href="#image20"><img src="images/3788x5748_20210817154155658.jpg" alt="3788x5748_20210817154155658"></a>
+        <a id="image21" href="#image21"><img src="images/4829B406-C554-49AD-ACB0-9912B5F0E2C4.png" alt="4829B406-C554-49AD-ACB0-9912B5F0E2C4"></a>
+        <a id="image22" href="#image22"><img src="images/816CA127-34B0-406C-91B2-ABCEDC7761AB.png" alt="816CA127-34B0-406C-91B2-ABCEDC7761AB"></a>
+        <a id="image23" href="#image23"><img src="images/IMG_0384.jpg" alt="IMG_0384"></a>
+        <a id="image24" href="#image24"><img src="images/IMG_2025.JPG" alt="IMG_2025"></a>
+        <a id="image25" href="#image25"><img src="images/IMG_6420.JPG" alt="IMG_6420"></a>
+        <a id="image26" href="#image26"><img src="images/IMG_6421.JPG" alt="IMG_6421"></a>
+        <a id="image27" href="#image27"><img src="images/IMG_6422.JPG" alt="IMG_6422"></a>
+        <a id="image28" href="#image28"><img src="images/IMG_6436.JPG" alt="IMG_6436"></a>
+        <a id="image29" href="#image29"><img src="images/Lucyna Kushinada Xenon (36).jpg" alt="Lucyna Kushinada Xenon (36)"></a>
+        <a id="image30" href="#image30"><img src="images/S_Konan (11)-tpWhxJFw.jpg" alt="S_Konan (11)-tpWhxJFw"></a>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox-plus-jquery.min.js"></script>
+    <script>
+        document.querySelectorAll('.image-folder a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
