@@ -1,45 +1,56 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
 }
 
 .gallery-container {
-  max-width: 600px;
-  margin: 20px auto;
-  overflow: hidden;
+    width: 80%;
+    overflow: hidden;
 }
 
 .gallery {
-  display: flex;
-  flex-direction: row; /* Horizontal layout for scrolling */
-  overflow-x: scroll; /* Enable horizontal scrolling */
-  scroll-snap-type: x mandatory; /* Snap each image to the viewport */
-  scroll-padding: 0 10px; /* Padding to ensure centered snapping */
-  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    display: flex;
+    transition: transform 0.3s ease-in-out;
 }
 
-.image-wrapper {
-  flex: 0 0 auto; /* Prevent images from growing */
-  scroll-snap-align: center; /* Center alignment for snapping */
-  margin-right: 10px; /* Space between images */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: transform 0.3s ease; /* Smooth transition for scale */
+.gallery-item {
+    position: relative;
+    flex: 1 0 15%;
+    transition: flex 0.3s ease-in-out;
 }
 
-.image-wrapper:hover {
-  transform: scale(1.1); /* Scale up on hover */
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out, border-radius 0.3s ease-in-out;
 }
 
-.image-wrapper img {
-  width: 100%; /* Images take full width of their container */
-  height: auto; /* Maintain aspect ratio */
-  border-radius: 10px; /* Rounded corners */
-  opacity: 0.8; /* Adjust opacity as needed */
-  transition: opacity 0.3s ease; /* Smooth transition for opacity */
+.gallery-item.main {
+    flex: 1 0 30%;
 }
 
-.image-wrapper:hover img {
-  opacity: 1; /* Increase opacity on hover */
+.gallery-item.next {
+    flex: 1 0 24%;
+}
+
+.gallery-item.prev {
+    flex: 1 0 24%;
+}
+
+.gallery-item.next-next {
+    flex: 1 0 18%;
+}
+
+.gallery-item.prev-prev {
+    flex: 1 0 18%;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    border-radius: 20px;
 }
