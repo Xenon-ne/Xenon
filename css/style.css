@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.gallery-container {
+  max-width: 600px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.gallery {
+  display: flex;
+  flex-direction: column-reverse; /* To stack images vertically and show the latest at the top */
+  overflow-y: auto;
+  height: 400px; /* Adjust height as needed */
+}
+
+.gallery img {
+  width: 100%; /* Images take full width of their container */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 10px; /* Space between images */
+  opacity: 0.8; /* Adjust opacity as needed */
+  transition: opacity 0.3s ease; /* Smooth transition for opacity change */
+}
+
+.gallery img:hover {
+  opacity: 1; /* Increase opacity on hover */
+}
